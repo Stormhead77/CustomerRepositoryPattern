@@ -1,4 +1,4 @@
-﻿using CustomerDatalayer.BusinessEntities;
+﻿using CustomerDatalayer.Entities;
 
 namespace CustomerDatalayer.Tests.Entities
 {

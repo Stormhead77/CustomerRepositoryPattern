@@ -1,4 +1,6 @@
-﻿namespace CustomerDatalayer.BusinessEntities
+﻿using System.Data.SqlClient;
+
+namespace CustomerDatalayer.Entities
 {
     public class Address
     {
@@ -11,5 +13,19 @@
         public string PostalCode { get; set; } = string.Empty;
         public string State { get; set; } = string.Empty;
         public string Country { get; set; } = string.Empty;
+
+        public Address() { }
+        public Address(SqlDataReader reader)
+        {
+            Id = (int)reader["AddressID"];
+            CustomerId = (int)reader["CustomerId"];
+            AddressLine = (string)reader["AddressLine"];
+            AddressLine2 = (string)reader["AddressLine2"];
+            Type = (string)reader["AddressType"];
+            City = (string)reader["City"];
+            PostalCode = (string)reader["PostalCode"];
+            State = (string)reader["State"];
+            Country = (string)reader["Country"];
+        }
     }
 }
